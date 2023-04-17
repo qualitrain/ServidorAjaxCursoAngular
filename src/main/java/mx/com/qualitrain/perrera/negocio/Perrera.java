@@ -1,4 +1,4 @@
-package mx.com.qualitrain.negocio;
+package mx.com.qualitrain.perrera.negocio;
 
 import java.util.ArrayList;
 import java.util.List;

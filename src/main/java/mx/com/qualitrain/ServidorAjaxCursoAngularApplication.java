@@ -5,7 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-//@ComponentScan("mx.com.qualitrain")
 public class ServidorAjaxCursoAngularApplication {
 
 	public static void main(String[] args) {
