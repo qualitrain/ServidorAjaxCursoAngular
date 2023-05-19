@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>mx.com.qualitrain</groupId>
 	<artifactId>ServidorAjaxCursoAngular</artifactId>
-	<version>1.1.0</version>
+	<version>1.2.0</version>
 	<name>ServidorAjaxCursoAngular</name>
 	<description>Publicador Rest que responde a peticiones desde cte Angular/JavaScript/rxJs</description>
 	<properties>

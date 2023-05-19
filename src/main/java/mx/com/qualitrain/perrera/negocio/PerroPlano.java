@@ -56,6 +56,10 @@ public class PerroPlano {
 		this.idPropietario = idPropietario;
 	}
 
-
+	@Override
+	public String toString() {
+		return "PerroPlano [id=" + id + ", nombre=" + nombre + ", raza=" + raza + ", edad=" + edad + ", idPropietario="
+				+ idPropietario + "]";
+	}
 	
 }

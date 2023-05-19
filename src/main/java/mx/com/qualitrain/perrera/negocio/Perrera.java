@@ -3,6 +3,7 @@ package mx.com.qualitrain.perrera.negocio;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.TreeMap;
 
 import org.springframework.stereotype.Component;
@@ -16,7 +17,6 @@ public class Perrera {
 	
 	public Perrera() {
 		super();
-//		System.out.println("Perrera()");
 		this.perros = new TreeMap<Integer,Perro>();
 		this.personas = new TreeMap<Integer,Persona>();
 		this.domicilios = new TreeMap<Integer,Domicilio>();
@@ -109,14 +109,31 @@ public class Perrera {
 		this.perros.remove(id);
 		System.out.println(this.perros.size());
 	}
+	
+	public int getIdMaxPerros() {
+		Optional<Integer> idMax = this.perros.keySet()
+		           				             .stream()
+		           				             .max( (a,b) -> a > b ? 1 : -1 );
+		return idMax.orElse(0);
+	}
+	
 	public static void pausaAleatoria(){
 		int ms = ( Math.round((float) Math.random() * 10000 ) % 25 ) * 100;
 		System.out.println("pausa de " + ms + " ms");
 		try {
 			Thread.sleep(ms);
 		} catch (InterruptedException e) {
-			System.out.println("Excepci�n en Perrera.pausa: "+ e.getMessage());
+			System.out.println("Excepcion en Perrera.pausa: "+ e.getMessage());
 			e.printStackTrace();
 		}
+	}
+	
+	//Version simplificada: uni-dimensional 
+	public PerroPlano actualizarPerroPlano(Perro perroActual, PerroPlano perro) {
+		Perro perroNvo = this.perros.get(perroActual.getId());
+		perroNvo.setNombre(perro.getNombre());
+		perroNvo.setEdad(perro.getEdad());
+		perroNvo.setRaza(perro.getRaza());
+		return perroNvo.toPerroPlano();
 	}
 }

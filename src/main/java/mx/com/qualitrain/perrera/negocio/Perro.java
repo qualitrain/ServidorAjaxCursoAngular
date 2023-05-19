@@ -85,7 +85,7 @@ public class Perro {
 	}
 	
 	public PerroPlano toPerroPlano() {
-		return new PerroPlano(this.id, this.nombre, this.raza, this.edad, this.propietario.getIdPersona());
+		return new PerroPlano(this.id, this.nombre, this.raza, this.edad, this.propietario != null ? propietario.getIdPersona() : 0);
 	}
 
 	
